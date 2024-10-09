@@ -39,8 +39,13 @@ h1 {
     height: auto;
 }
 
-.product-description {
+.product-description-rupture {
     color: #ff0000;
+    font-weight: bold;
+}
+
+.product-description-stock {
+    color: #00ae13;
     font-weight: bold;
 }
 
@@ -199,7 +204,23 @@ table img {
     background-color: rgba(128, 128, 128, 0.8); /* Plus foncé au survol */
 }
 
-
+.notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    margin-right : 75px;
+    background-color: #77dd77;
+    color: #000000;
+    border: 3px solid #000000;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;  /* Initialement invisible */
+    transition: opacity 1s ease-in-out;  /* Transition en fondu sur 1 seconde */
+    z-index: 9999;
+}
 
 /* -------------------------------------------------- */
 
@@ -260,6 +281,13 @@ table img {
     .non-member-price {
         font-size: 15px;
     }
+    
+    .notification {
+    padding : 8px;
+    font-size : 14px;
+    margin-right : 65px;
+    z-index : 9999;
+}
     
 }
 
@@ -580,4 +608,3 @@ table img {
         height: auto;
     }
 }
-
