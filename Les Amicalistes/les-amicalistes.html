@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+    <head>
+        <!-- Métadonnées pour PWA et iPhone -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+        <!-- Encodage et mise en page responsive -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="theme-color" content="#0d75e4" />
+
+        <!-- Titre de la page -->
+        <title>Les Amicalistes</title>
+        <link rel="manifest" href="../manifest.json" />
+        <!-- Feuille de style -->
+        <link rel="stylesheet" href="les-amicalistes.css" />
+
+        <!-- Favicon et icônes -->
+        <link rel="icon" href="../images/icon/favicon.ico" />
+        <link rel="shortcut icon" href="../images/icon/shortcut icon 16x16.ico" type="image/x-icon" />
+
+        <!-- Apple Touch Icons pour iPhone/iPad -->
+        <link rel="apple-touch-icon" sizes="57x57" href="../images/icon/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="../images/icon/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="../images/icon/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="../images/icon/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="../images/icon/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="../images/icon/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="../images/icon/apple-touch-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="167x167" href="../images/icon/apple-touch-icon-167x167.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../images/icon/apple-touch-icon-180x180.png" />
+        <link rel="apple-touch-icon" sizes="192x192" href="../images/icon/apple-touch-icon-192x192.png" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Les Amicalistes</h1>
+        </header>
+
+        <script src="../index.js"></script>
+
+        <section class="members-section">
+            <div class="member">
+                <img
+                    src="https://thumbs.dreamstime.com/b/avatar-par-d%C3%A9faut-ic%C3%B4ne-profil-vectoriel-m%C3%A9dias-sociaux-utilisateur-portrait-176256935.jpg"
+                    alt="Photo de membre 1" />
+                <h3>Jean Dupont</h3>
+                <p>Président de l'Amicale. En charge de la gestion des événements et de la communication.</p>
+            </div>
+            <div class="member">
+                <img
+                    src="https://thumbs.dreamstime.com/b/avatar-par-d%C3%A9faut-ic%C3%B4ne-profil-vectoriel-m%C3%A9dias-sociaux-utilisateur-portrait-176256935.jpg"
+                    alt="Photo de membre 2" />
+                <h3>Marie Dubois</h3>
+                <p>Vice-Présidente. Responsable des relations avec les étudiants et la gestion des projets sociaux.</p>
+            </div>
+            <div class="member">
+                <img
+                    src="https://thumbs.dreamstime.com/b/avatar-par-d%C3%A9faut-ic%C3%B4ne-profil-vectoriel-m%C3%A9dias-sociaux-utilisateur-portrait-176256935.jpg"
+                    alt="Photo de membre 3" />
+                <h3>Paul Martin</h3>
+                <p>Trésorier. Gère les finances et les budgets des événements de l'Amicale.</p>
+            </div>
+            <!-- Ajoutez d'autres membres ici -->
+        </section>
+
+        <div class="floating-buttons">
+            <button class="menu-button">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Bouton pour rafraîchir la page -->
+            <button class="refresh-button" onclick="refreshPage()">
+                <i class="fa-solid fa-rotate-right"></i>
+            </button>
+
+            <!-- Bouton pour remonter en haut de la page -->
+            <button class="scroll-top-button" onclick="scrollToTop()">
+                <i class="fa-solid fa-caret-up"></i>
+            </button>
+        </div>
+
+        <div id="menu-overlay" class="menu-overlay">
+            <div class="menu-content">
+                <!-- Bouton pour fermer le menu -->
+                <button class="close-menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h2>Menu</h2>
+                <a href="../index.html" class="menu-link-accueil">Accueil</a>
+                <br />
+                <a href="../A propos/about.html" class="menu-link-about">À propos</a>
+            </div>
+        </div>
+
+        <!-- Bouton de retour vers la page d'accueil -->
+        <div class="back-button">
+            <button onclick="goBack()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+        </div>
+
+        <div id="notification" class="notification">
+            <strong>La page a été rafraîchie avec succès !</strong>
+        </div>
+
+        <script src="../main.js"></script>
+    </body>
+</html>
