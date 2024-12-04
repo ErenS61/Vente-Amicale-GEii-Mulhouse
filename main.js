@@ -74,3 +74,60 @@ document.querySelector(".scroll-top-button").onclick = scrollToTop;
 function goBack() {
     window.history.back(); // Retourne à la page précédente
 }
+
+document.getElementById("CopyIBAN").addEventListener("click", function() {
+        // Le texte à copier
+        const texte = this.innerText;
+
+        // Copier le texte dans le presse-papiers
+        navigator.clipboard.writeText(texte)
+            .then(() => {
+                alert("Texte copié dans le presse-papiers !");
+            })
+            .catch(err => {
+                console.error("Erreur lors de la copie : ", err);
+            });
+    });
+
+
+// Fonction pour générer un flocon de neige
+function createSnowflake() {
+    const snowflake = document.createElement("i");
+    snowflake.classList.add("snowflake");
+    snowflake.innerHTML = "❄"; // Utilisation du symbole de flocon de neige
+
+    // Position et style aléatoires
+    snowflake.style.left = `${Math.random() * 100}vw`;
+    snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+    snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Durée aléatoire
+    snowflake.style.opacity = Math.random();
+
+    document.querySelector(".snow-container").appendChild(snowflake);
+
+    // Supprimer le flocon après l'animation
+    setTimeout(() => {
+        snowflake.remove();
+    }, 5000); // Durée de vie d'un flocon
+}
+
+// Génère un nouveau flocon toutes les 300 ms
+setInterval(createSnowflake, 300);
+
+function updateDateTime() {
+        const now = new Date();
+        
+        // Format de l'heure
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        
+        // Format de la date
+        const optionsDate = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+        const currentDate = new Intl.DateTimeFormat('fr-FR', optionsDate).format(now);
+        document.getElementById('date').textContent = currentDate;
+    }
+
+    // Met à jour l'heure et la date toutes les secondes
+    setInterval(updateDateTime, 1000);
+    updateDateTime(); // Appelle une première fois pour éviter le délai d'une seconde
